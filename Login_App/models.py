@@ -71,9 +71,9 @@ class CustomUesr(AbstractBaseUser, PermissionsMixin):
         return self.email
 
 class ProfileModel(models.Model):
-    user_email = models.OneToOneField(CustomUesr, on_delete=models.CASCADE, related_name='profile')
+    email = models.OneToOneField(CustomUesr, on_delete=models.CASCADE, related_name='profile')
     username = models.CharField(max_length=264, blank=True)
-    full_name = models.CharField(max_length=264, blank=True)
+    name = models.CharField(max_length=264, blank=True)
     phone = models.CharField(max_length=20, blank=True)
     date_joined = models.DateField(auto_now_add=True)
 
