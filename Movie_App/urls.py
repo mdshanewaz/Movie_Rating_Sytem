@@ -7,4 +7,5 @@ urlpatterns = [
     path('list/', views.MovieListAPIView.as_view(), name='movies_list'),
     path('add/', views.MovieAddAPIView.as_view(), name='add_movie'),
     path('<int:pk>/', views.MovieRetrieveUpdateDestroyAPIView.as_view(), name='movie_upfate'),
+    path('search/', views.search_movieView, name='search'),
 ]
