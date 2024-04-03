@@ -22,7 +22,8 @@ class UserLoginSerializer(serializers.Serializer):
 
 
 class UserProfileSerializer(serializers.ModelSerializer):
-    user_email = serializers.EmailField(source='user_email.email', read_only=True)
+    email = serializers.EmailField(source='email.email', read_only=True)
+    password = serializers.CharField(source='email.password', read_only=True)
     class Meta:
         model = ProfileModel
-        exclude = ['date_joined']
+        exclude = ['date_joined', 'username']
